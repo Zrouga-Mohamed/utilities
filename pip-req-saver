@@ -1,0 +1,23 @@
+# Issue ? 
+# I need to install a package via pip and save it at the same time in requirements.txt
+# add this function to your .bashrc or .bash_profile 
+
+function pipy() {
+    echo $'\n'$1 >> requirements.txt; pip install $1
+}
+
+# then either reboot or do this with logging off
+
+source ~/.bashrc 
+
+# now use pipy command to install package and save it's name into requirements.txt like this :
+
+pipy flask 
+
+
+# To-Do this snippet handles one library at the time , work on making it for multi libs 
+# Example :
+
+pipy  flask  flask-wtf
+
+# will read only flask 
